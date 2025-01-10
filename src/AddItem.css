@@ -1,0 +1,49 @@
+.archivo {
+  font-family: 'Lato';
+}
+
+.montserrat {
+  font-family: 'Montserrat'
+}
+
+.kurale {
+  font-family: 'Kurale'
+}
+
+.arizonia {
+  font-family: 'Arizonia'
+}
+
+.radley {
+  font-family: 'Radley'
+}
+
+.playfair {
+  font-family: 'Playfair'
+}
+
+.poppins {
+  font-family: 'Poppins'
+}
+
+.mapswrapper {
+  background: #fff;
+  position: relative;
+  width: 100%;
+}
+
+.mapswrapper iframe {
+  width: 100%; /* Atur lebar penuh */
+  height: 450px; /* Tinggi default, sesuaikan dengan kebutuhan */
+  border: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.img-fixed {
+  width: 100%; /* Sesuaikan dengan lebar card */
+  aspect-ratio: 16 / 9; /* Misalnya untuk gambar 16:9 */
+  object-fit: cover; /* Memastikan gambar tetap proporsional */
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
