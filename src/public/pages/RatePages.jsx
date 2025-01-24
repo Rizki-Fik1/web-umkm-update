@@ -1,18 +1,28 @@
+import Navbar from "../../contents/Navbar";
+import Footer from "../components/Aboutpage/FooterAbt";
 import BodyRate from "../components/Ratepage/BodyRate";
+import BodyRateTwo from "../components/Ratepage/BodyRateTwo";
 import HeaderRate from "../components/Ratepage/HeaderRate";
-import NavbarRate from "../components/Ratepage/NavbarRate";
 
  export default function RatePages() {
 
   return (
     <div>
       <div className="bg-white">
-        <NavbarRate/>
+        <Navbar/>
         <HeaderRate/>
       </div>
 
-      <div className="bg-white h-screen">
+      <div className="bg-white min-h-screen">
         <BodyRate/>
+      </div>
+
+      <div className="min-h-screen">
+        <BodyRateTwo/>
+      </div>
+
+      <div>
+        <Footer/>
       </div>
     </div>
   )

@@ -59,11 +59,19 @@ const MenuForm = ({ menu, onSubmit, onCancel }) => {
 
   const handleFile = (file) => {
     if (file) {
+      // Validasi tipe file
       if (!file.type.startsWith('image/')) {
         alert('File harus berupa gambar!');
         return;
       }
-
+  
+      // Validasi ukuran file (maks 5 MB)
+      const maxSizeInBytes = 100 * 1024 * 1024; // 5 MB
+      if (file.size > maxSizeInBytes) {
+        alert('Ukuran file tidak boleh lebih dari 5 MB!');
+        return;
+      }
+  
       const reader = new FileReader();
       reader.onloadend = () => {
         setImagePreview(reader.result);
@@ -72,6 +80,7 @@ const MenuForm = ({ menu, onSubmit, onCancel }) => {
       reader.readAsDataURL(file);
     }
   };
+  
 
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -143,7 +152,7 @@ const MenuForm = ({ menu, onSubmit, onCancel }) => {
                 Klik atau seret gambar ke sini untuk upload
               </p>
               <p className="text-xs text-gray-400 mt-1">
-                PNG, JPG, GIF hingga 5MB
+                PNG dan JPG
               </p>
             </div>
           )}

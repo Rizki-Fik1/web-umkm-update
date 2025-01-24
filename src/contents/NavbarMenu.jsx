@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../assets/LogoBaru.png';
+import Logo from '../public/assets/LogoBaru.png';
+
+import { AiFillHome } from "react-icons/ai";
+import { IoFastFood } from "react-icons/io5";
+import { FaSquarePen } from "react-icons/fa6";
+import { FaUsers } from "react-icons/fa";
 
 export default function NavbarMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,14 +15,14 @@ export default function NavbarMenu() {
   };
 
   return (
-    <div className="bg-white w-full h-16 flex justify-between items-center px-5 md:px-14 md:h-24">
+    <div className="bg-white w-full h-16 flex items-center px-5 md:px-14 md:h-24 z-50">
       {/* Logo di kiri */}
       <div className="flex">
         <img src={Logo} alt="Logo" className="relative h-16 md:h-32" />
       </div>
 
-      {/* Menu Navigasi Desktop */}
-      <div className="hidden md:flex md:gap-x-10">
+      {/* Menu Navigasi Desktop - Posisi Tengah */}
+      <div className="hidden md:flex md:gap-x-10 flex-grow justify-center">
         <Link
           to={'/'}
           className="text-xs md:text-xl font-sans text-slate-700 hover:text-black"
@@ -45,58 +50,47 @@ export default function NavbarMenu() {
       </div>
 
       {/* Menu Navigasi Mobile */}
-      <div
-        className={`absolute top-16 left-1/2 transform -translate-x-1/2 h-60 w-80 rounded-b-lg bg-orange-500 p-5 
+      <di7
+        className={`absolute top-16 left-1/2 transform -translate-x-1/2 h-48 w-80 rounded-b-lg bg-orange-700 p-5 
         ${isMenuOpen ? 'flex flex-col' : 'hidden'} md:hidden`}
       >
         <Link
           to={'/'}
           onClick={toggleMenu}
-          className="text-base font-sans text-white hover:text-black mb-2"
+          className="flex gap-x-3 items-center text-base font-sans text-white hover:text-black mb-4"
         >
+          <AiFillHome className='text-white text-xl' />
           Home
         </Link>
         <Link
           to={'/menu'}
           onClick={toggleMenu}
-          className="text-base font-sans text-white hover:text-black mb-2"
+          className="flex gap-x-3 text-base font-sans text-white hover:text-black mb-4"
         >
+          <IoFastFood className='text-white text-xl' />
           Menu
         </Link>
         <Link
           to={'/rate'}
           onClick={toggleMenu}
-          className="text-base font-sans text-white hover:text-black mb-2"
+          className="flex gap-x-3 text-base font-sans text-white hover:text-black mb-4"
         >
+          <FaSquarePen className='text-white text-xl' />
           Rate
         </Link>
         <Link
           to={'/about'}
           onClick={toggleMenu}
-          className="text-base font-sans text-white hover:text-black"
+          className="flex gap-x-3 text-base font-sans text-white hover:text-black"
         >
+          <FaUsers className='text-white text-xl' />
           About Us
         </Link>
-        <Link
-          to={'/login'}
-          onClick={toggleMenu}
-          className="mt-8 flex justify-center relative left-10 w-3/4 bg-yellow-500 text-white text-lg font-semibold rounded-md px-3 py-1 shadow-lg active:opacity-80"
-        >
-          Login
-        </Link>
-      </div>
+      </di7>
 
-      {/* Tombol Login di Desktop */}
-      <Link
-        to={'/login'}
-        className="hidden md:block bg-orange-500 text-white text-xs md:text-lg font-semibold rounded-lg px-3 py-1 hover:bg-orange-700 md:px-5 md:py-1"
-      >
-        Login
-      </Link>
-
-      {/* Tombol Hamburger */}
+      {/* Tombol Hamburger (Posisi di kanan mobile) */}
       <button
-        className="text-slate-700 md:hidden focus:outline-none"
+        className="text-slate-700 md:hidden focus:outline-none absolute right-5"
         onClick={toggleMenu}
       >
         <svg

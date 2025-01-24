@@ -22,14 +22,14 @@ const AdminNavigation = () => {
         <div className="relative flex justify-center px-4">
           <div className="relative w-[190px] h-12 group">
             {/* Active/Hover Background */}
-            <div 
+            <div
               className={`absolute inset-0 rounded-[10px] transition-colors duration-200
                 ${isActive ? 'bg-[#ed6a18]' : 'group-hover:bg-[#ed6a18]'}`}
             />
             
             {/* Content */}
             <div className="absolute inset-0 flex items-center px-4">
-              <div className={`w-8 h-8 flex items-center justify-center
+              <div className={`w-8 h-8 flex items-center justify-centerl
                 ${isActive ? 'text-white' : 'text-[#ed6a18] group-hover:text-white'}`}>
                 <Icon sx={{ fontSize: 24 }} />
               </div>
