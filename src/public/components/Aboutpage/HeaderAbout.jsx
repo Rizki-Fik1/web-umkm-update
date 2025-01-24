@@ -22,37 +22,37 @@ export default function HeaderAbout() {
   return (
     <div className='md:px-40'>
       {/* IMAGE */}
-      <div className='flex justify-center items-center pt-10'>
+      <div className='flex justify-center items-center pt-10 px-5 md:px-0'>
         <img src={AboutUs}/>
       </div>
 
       {/* Container Pertama */}
-      <div className='flex flex-col'>
-        <img src={AboutTitle} className='w-72 pt-14'/>
+      <div className='flex flex-col px-8 md:px-0'>
+        <img src={AboutTitle} className='md:w-72 pt-14'/>
 
         <div>
-          <p className='montserrat flex text-5xl text-black font-semibold gap-x-5 pt-8'>
-            Memperkenalkan Warung <section className='text-orange-500 font-bold'>Ayam</section>
+          <p className='montserrat flex text-xl md:text-5xl text-black font-semibold gap-x-0 md:gap-x-5 pt-8'>
+            Memperkenalkan Warung
           </p>
 
-          <p className='montserrat flex text-5xl font-bold text-orange-500 pt-2'>Geprek Bu Siti</p>
+          <p className='montserrat flex text-xl md:text-5xl font-bold text-orange-500 md:pt-2'>Ayam Geprek Bu Siti</p>
         </div>
         
-        <div className='flex flex-row text-base text-pretty text-slate-600 gap-x-24 pt-12'>
+        <div className='flex flex-col md:flex-row text-center md:text-start text-xs md:text-base text-pretty text-slate-600 gap-x-5 md:gap-x-24 pt-6 md:pt-12 gap-y-7 md:gap-y-0'>
           <p>{descOne}</p>
           <p>{descTwo}</p>
           <p>{descThree}</p>
         </div>
 
         {/* Container Kedua */}
-        <div className='pt-24'>
-          <div className='flex flex-row  justify-center items-center gap-x-10'>
-            <img src={groupOne}/>
-            <img src={groupTwo}/>
+        <div className='flex flex-col pt-10 md:pt-24'>
+          <div className='flex flex-col md:flex-row  justify-center items-center gap-x-5 md:gap-x-10 gap-y-4 md:gap-y-0'>
+            <img src={groupOne} className='h-20 md:h-auto'/>
+            <img src={groupTwo} className='h-20 md:h-auto'/>
           </div>
 
           <div className='flex flex-row  justify-center items-center pt-4'>
-            <img src={groupThree}/>
+            <img src={groupThree} className='h-20 md:h-auto'/>
           </div>
         </div>
       </div>

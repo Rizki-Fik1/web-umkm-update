@@ -1,8 +1,8 @@
+import Navbar from "../../contents/Navbar";
 import BodyAbout from "../components/Aboutpage/BodyAbout";
-import Footer from "../components/Aboutpage/Footer";
 import FooterAbout from "../components/Aboutpage/FooterAbout";
 import HeaderAbout from "../components/Aboutpage/HeaderAbout";
-import NavbarAbout from "../components/Aboutpage/NavbarAbout";
+import FooterFix from "../../contents/FooterFix";
 
 
 export default function AboutPage() {
@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <>
       <div className="bg-white pb-24">
-        <NavbarAbout/>
+        <Navbar/>
         <HeaderAbout/>
       </div>
 
@@ -18,14 +18,12 @@ export default function AboutPage() {
         <BodyAbout/>
       </div>
 
-      <div className="bg-white pb-20">
+      <div className="bg-white pb-10">
         <FooterAbout/>
       </div>
 
-      <div className="w-full h-[0.5px] bg-black"></div>
-
       <div className="bg-white">
-        <Footer/>
+        <FooterFix/>
       </div>
     </>
   )

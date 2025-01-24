@@ -5,12 +5,12 @@ import BodyMenuFour from "../components/Menupage/BodyMenuFour";
 import BodyMenuOne from "../components/Menupage/BodyMenuOne";
 import BodyMenuThree from "../components/Menupage/BodyMenuThree";
 import BodyMenuTwo from "../components/Menupage/BodyMenuTwo";
-import FooterMenu from "../components/Menupage/FooterMenu";
 import HeaderMenu from "../components/Menupage/HeaderMenu";
 import MenuCamilan from "../components/Menupage/MenuCamilan";
 import MenuMakanan from "../components/Menupage/MenuMakanan";
 import MenuMinuman from "../components/Menupage/MenuMinuman";
-import NavbarMenu from "../components/Menupage/NavbarMenu";
+import FooterFix from "../../contents/FooterFix";
+import NavbarMenu from "../../contents/NavbarMenu";
 
 export default function MenuPages() {
   const [menus, setMenus] = useState([]);
@@ -38,7 +38,7 @@ export default function MenuPages() {
   return (
     <>
       <div className="bg-orange-500 h-screen overflow-hidden flex flex-col">
-        <NavbarMenu />
+        <NavbarMenu/>
         <HeaderMenu />
       </div>
 
@@ -74,7 +74,7 @@ export default function MenuPages() {
       <div className="w-full h-[0.5px] bg-black"></div>
 
       <div className="pt-14">
-        <FooterMenu/>
+        <FooterFix/>
       </div>
     </>
   );

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const MenuCard = ({ menu, onEdit, onDelete }) => {
   return (
-    <div className="w-40 md:w-80 h-auto bg-white rounded-2xl shadow-md">
+    <div className="w-60 md:w-75 h-auto bg-white rounded-2xl shadow-md">
       <img 
         src={menu.image || "/api/placeholder/300/200"} 
         alt={menu.name} 

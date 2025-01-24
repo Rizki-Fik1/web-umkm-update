@@ -14,7 +14,7 @@ export default function BodyMenuOne() {
       <div className="w-full justify-center items-center relative bottom-6 md:w-1/2 flex md:bottom-5">
         <img src={imageThree} className='h-32 md:h-80 absolute left-24 bottom-[0.5px] z-30 md:bottom-44 md:left-[300px]'/>
         <img src={imageOne} className='h-36 md:h-96 absolute right-10 z-20 md:top-[135px] md:left-14'/>
-        <img src={imageTwo} className='h-[150px] absolute left-40 z-10 md:h-[470px] md:top-[135px] md:left-[320px]'/>
+        <img src={imageTwo} className='h-[150px] absolute left-[155px] z-10 md:h-[470px] md:top-[135px] md:left-[320px]'/>
       </div>
 
       <div className="w-full pl-0 pt-20 px-0 md:w-1/2 md:pl-16 md:px-24">

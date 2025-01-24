@@ -1,26 +1,26 @@
+import FooterFix from "../../contents/FooterFix";
+import Navbar from "../../contents/Navbar";
 import BodyHome from "../components/Homepage/BodyHome";
 import BodyHomeThree from "../components/Homepage/BodyHomeThree";
 import BodyHomeTwo from "../components/Homepage/BodyHomeTwo";
-import FooterHome from "../components/Homepage/FooterHome";
 import HeaderHome from "../components/Homepage/HeaderHome";
-import NavbarHome  from "../components/Homepage/NavbarHome";
 
 export default function HomePages() {
 
   return (
     <>
     {/* NAVBAR */}
-      <div className="bg-white min-h-screen">
-        <NavbarHome/>
+      <div className="bg-white min-h-[80vh] md:min-h-screen">
+        <Navbar/>
         <HeaderHome/>
       </div>
 
     {/* BODY */}
-      <div className="bg-white min-h-screen">
+      <div className="bg-white min-h-[80vh] md:min-h-screen">
         <BodyHome/>
       </div>
 
-      <div className="bg-white min-h-screen">
+      <div className="bg-white min-h-[80vh] md:min-h-screen">
         <BodyHomeTwo/>
       </div>
 
@@ -29,7 +29,7 @@ export default function HomePages() {
       </div>
 
       <div>
-        <FooterHome/>
+        <FooterFix/>
       </div>
     </>
   )

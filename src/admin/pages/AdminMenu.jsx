@@ -93,7 +93,7 @@ const AdminMenu = () => {
               </button>
             )}
           </div>
-
+  
           {showForm ? (
             <div className="mb-6">
               <MenuForm
@@ -108,25 +108,25 @@ const AdminMenu = () => {
           ) : (
             <div className="space-y-16">
               {Object.entries(categories).map(([categoryKey, categoryName]) => (
-                <div 
-                  key={categoryKey} 
-                  className="p-6 rounded-lg shadow-md" 
+                <div
+                  key={categoryKey}
+                  className="p-6 rounded-lg shadow-md"
                   style={{
                     backgroundColor: '#FFFBD3',
-                    border: '1px solid #FFD700'
+                    border: '1px solid #FFD700',
                   }}
                 >
                   <div className="flex items-center mb-6">
-                    <h2 
-                      className="text-2xl font-semibold" 
+                    <h2
+                      className="text-2xl font-semibold"
                       style={{
-                        color: '#B8860B'
+                        color: '#B8860B',
                       }}
                     >
                       {categoryName}
                     </h2>
                   </div>
-                  <div className="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
                     {groupedMenus[categoryKey]?.map((menu) => (
                       <MenuCard
                         key={menu.id}
@@ -143,7 +143,7 @@ const AdminMenu = () => {
         </div>
       </main>
     </div>
-  );
+  );  
 };
 
 export default AdminMenu;
