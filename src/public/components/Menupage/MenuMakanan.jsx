@@ -28,7 +28,7 @@ export default function MenuMakanan({ menu }) {
               rel="noopener noreferrer"
               className="mt-3 inline-block bg-orange-600 text-white text-sm md:text-base font-semibold py-1 px-3 rounded-md hover:bg-orange-700 transition"
             >
-              Pesan di GoFood
+              Pesan di GoFoodd
             </a>
           </div>
         </div>
