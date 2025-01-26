@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from '../components/Sidebar/Sidebar';
 import MenuCard from '../components/Menu/MenuCard';
 import MenuForm from '../components/Menu/MenuForm';
-import { adminMenuService } from '../Service/adminMenuService';
+import { adminMenuService } from '../service/adminMenuService';
 
 const AdminMenu = () => {
   const [menus, setMenus] = useState([]);
