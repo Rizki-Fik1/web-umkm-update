@@ -8,7 +8,8 @@ const MenuForm = ({ menu, onSubmit, onCancel }) => {
     price: '',
     description: '',
     category: 'makanan',
-    image: ''
+    image: '',
+    goFoodUrl: '',
   });
 
   const [imagePreview, setImagePreview] = useState(null);
@@ -43,7 +44,7 @@ const MenuForm = ({ menu, onSubmit, onCancel }) => {
         savedMenu = await adminMenuService.addMenu(formData);
       }
 
-      setFormData({ name: '', price: '', description: '', category: 'makanan', image: '' });
+      setFormData({ name: '', price: '', description: '', category: 'makanan', image: '', goFoodUrl: '' });
       setImagePreview(null);
       onSubmit(savedMenu);
     } catch (error) {
@@ -198,6 +199,16 @@ const MenuForm = ({ menu, onSubmit, onCancel }) => {
             value={formData.description}
             onChange={(e) => setFormData({ ...formData, description: e.target.value })}
             rows="3"
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium mb-1">Link GoFood</label>
+          <input
+            type="text"
+            className="w-full p-2 border rounded-md"
+            value={formData.goFoodUrl}
+            onChange={(e) => setFormData({ ...formData, goFoodUrl: e.target.value })}
           />
         </div>
 

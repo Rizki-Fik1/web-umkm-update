@@ -1,9 +1,8 @@
 export default function MenuMakanan({ menu }) {
-
   const menuMakanan = menu.filter((item) => item.category === 'makanan');
 
   return (
-    <div className="grid h-screen grid-cols-2 md:grid-cols-3 justify-items-center items-center gap-5 px-5 py-8 md:gap-y-0 md:px-20 md:py-16">
+    <div className="grid h-screen grid-cols-2 md:grid-cols-3 justify-items-center items-center gap-5 px-5 py-8 md:gap-y-10 md:px-20 md:py-16">
       {menuMakanan.map((product) => (
         <div
           key={product.id}
@@ -23,6 +22,14 @@ export default function MenuMakanan({ menu }) {
                 currency: 'IDR',
               }).format(product.price)}
             </p>
+            <a
+              href={product.goFoodUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 inline-block bg-orange-600 text-white text-sm md:text-base font-semibold py-1 px-3 rounded-md hover:bg-orange-700 transition"
+            >
+              Pesan di GoFood
+            </a>
           </div>
         </div>
       ))}

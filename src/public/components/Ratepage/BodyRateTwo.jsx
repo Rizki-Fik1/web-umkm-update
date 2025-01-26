@@ -1,12 +1,63 @@
 import React, { useState } from "react";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+import Swal from "sweetalert2";
 import "../../../AddItem.css";
 
 export default function BodyRateTwo() {
-  const [value, setValue] = useState("");
+  const [name, setName] = useState("Anonymous");
+  const [review, setReview] = useState("");
   const maxLength = 200;
+  const db = getFirestore();
+  const reviewsCollection = collection(db, "reviews");
 
-  const handleInputChange = (e) => {
-    setValue(e.target.value);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!review.trim()) {
+      Swal.fire({
+        icon: "warning",
+        title: "Ulasan kosong",
+        text: "Oops, sepertinya Anda belum menuliskan ulasan. Silakan isi kolom ulasan sebelum mengirim.",
+        confirmButtonColor: "#f59e0b", // Warna tombol
+      });
+      return;
+    }
+
+    if (name.trim() === "") {
+      Swal.fire({
+        icon: "warning",
+        title: "Nama kosong",
+        text: "Mohon isi nama Anda sebelum mengirim ulasan.",
+        confirmButtonColor: "#f59e0b",
+      });
+      return;
+    }
+
+    try {
+      await addDoc(reviewsCollection, {
+        name: name || "Anonymous",
+        review,
+        timestamp: new Date().toISOString(),
+      });
+
+      Swal.fire({
+        icon: "success",
+        title: "Ulasan Terkirim",
+        text: "Terima kasih! Ulasan Anda berhasil dikirim.",
+        confirmButtonColor: "#10b981", // Hijau
+      });
+
+      setName("Anonymous");
+      setReview("");
+    } catch (error) {
+      console.error("Terjadi kesalahan saat mengirim ulasan:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Gagal Mengirim",
+        text: "Maaf, terjadi kesalahan saat mengirim ulasan. Silakan coba lagi nanti.",
+        confirmButtonColor: "#ef4444", // Merah
+      });
+    }
   };
 
   return (
@@ -16,7 +67,7 @@ export default function BodyRateTwo() {
       </p>
 
       <div className="bg-orange-400 w-full md:h-auto px-14 py-7 rounded-2xl">
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* INPUT Username */}
           <section className="mb-5">
             <label className="montserrat text-white text-xl font-semibold">
@@ -29,8 +80,8 @@ export default function BodyRateTwo() {
                 placeholder="Masukkan nama Anda"
                 maxLength={20}
                 autoComplete="off"
-                defaultValue="Anonymous"
-                required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full bg-transparent text-xl outline-none placeholder:font-semibold"
               />
             </div>
@@ -45,12 +96,12 @@ export default function BodyRateTwo() {
               <textarea
                 placeholder="Berikan pendapat Anda"
                 maxLength={maxLength}
-                value={value}
-                onChange={handleInputChange}
+                value={review}
+                onChange={(e) => setReview(e.target.value)}
                 className="w-full h-40 bg-transparent text-xl placeholder:font-semibold outline-none resize-none"
               />
               <small className="text-sm text-gray-500 pt-2">
-                {value.length}/{maxLength} karakter
+                {review.length}/{maxLength} karakter
               </small>
             </div>
           </section>
